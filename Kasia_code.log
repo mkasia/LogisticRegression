@@ -1,0 +1,108 @@
+NOTE: Copyright (c) 2016 by SAS Institute Inc., Cary, NC, USA.
+NOTE: SAS (r) Proprietary Software 9.4 (TS1M6)
+      Licensed to NORTH CAROLINA STATE UNIVERSITY - IAA - T&R, Site 70112978.
+NOTE: This session is executing on the X64_10HOME  platform.
+
+
+
+NOTE: Analytical products:
+
+      SAS/STAT 15.1
+      SAS/ETS 15.1
+      SAS/OR 15.1
+      SAS/IML 15.1
+      SAS/QC 15.1
+
+NOTE: Additional host information:
+
+ X64_10HOME WIN 10.0.18362  Workstation
+
+NOTE: SAS initialization used:
+      real time           6.54 seconds
+      cpu time            2.48 seconds
+
+1    libname a "C:\Kasia\NCSU\FALL1\LOGISTIC REGRESSION\Homework 1";
+NOTE: Libref A was successfully assigned as follows:
+      Engine:        V9
+      Physical Name: C:\Kasia\NCSU\FALL1\LOGISTIC REGRESSION\Homework 1
+
+2    *General Additive Model (GAM);
+3    proc gam data=a.INSURANCE_T
+NOTE: Writing HTML Body file: sashtml.htm
+4    plots = components(clm commonaxes);
+5    model ins(event='1') = spline(mtgbal, df=4)/ dist = binomial link = logit;
+6    run;
+
+NOTE: PROC GAM is modeling the probability that INS=1. One way to change this to model the
+      probability that INS=0 is to specify the response variable option EVENT='0'.
+WARNING: Local scoring weights are essentially zero for the full model.
+NOTE: PROCEDURE GAM used (Total process time):
+      real time           5.98 seconds
+      cpu time            2.96 seconds
+
+
+7    *General Additive Model (GAM);
+8    proc gam data=a.INSURANCE_T
+9    plots = components(clm commonaxes);
+10   model ins(event='1') = spline(ccbal, df=4)/ dist = binomial link = logit;
+11   run;
+
+NOTE: PROC GAM is modeling the probability that INS=1. One way to change this to model the
+      probability that INS=0 is to specify the response variable option EVENT='0'.
+NOTE: PROCEDURE GAM used (Total process time):
+      real time           4.65 seconds
+      cpu time            3.64 seconds
+
+
+12   *General Additive Model (GAM);
+13   proc gam data=a.INSURANCE_T
+14   plots = components(clm commonaxes);
+15   model ins(event='1') = spline(lores, df=4)/ dist = binomial link = logit;
+16   run;
+
+NOTE: PROC GAM is modeling the probability that INS=1. One way to change this to model the
+      probability that INS=0 is to specify the response variable option EVENT='0'.
+NOTE: PROCEDURE GAM used (Total process time):
+      real time           1.33 seconds
+      cpu time            0.56 seconds
+
+
+17   *General Additive Model (GAM);
+18   proc gam data=a.INSURANCE_T
+19   plots = components(clm commonaxes);
+20   model ins(event='1') = spline(income, df=4)/ dist = binomial link = logit;
+21   run;
+
+NOTE: PROC GAM is modeling the probability that INS=1. One way to change this to model the
+      probability that INS=0 is to specify the response variable option EVENT='0'.
+NOTE: PROCEDURE GAM used (Total process time):
+      real time           1.54 seconds
+      cpu time            0.73 seconds
+
+
+22   *General Additive Model (GAM);
+23   proc gam data=a.INSURANCE_T
+24   plots = components(clm commonaxes);
+25   model ins(event='1') = spline(hmval, df=4)/ dist = binomial link = logit;
+26   run;
+
+NOTE: PROC GAM is modeling the probability that INS=1. One way to change this to model the
+      probability that INS=0 is to specify the response variable option EVENT='0'.
+NOTE: PROCEDURE GAM used (Total process time):
+      real time           1.26 seconds
+      cpu time            0.59 seconds
+
+
+27   *General Additive Model (GAM);
+28   proc gam data=a.INSURANCE_T
+29   plots = components(clm commonaxes);
+30   model ins(event='1') = spline(age, df=4)/ dist = binomial link = logit;
+31   run;
+
+NOTE: PROC GAM is modeling the probability that INS=1. One way to change this to model the
+      probability that INS=0 is to specify the response variable option EVENT='0'.
+NOTE: PROCEDURE GAM used (Total process time):
+      real time           1.34 seconds
+      cpu time            0.61 seconds
+
+
